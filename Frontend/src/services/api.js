@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3000/api';
+// Use Vite env var in production; fallback to localhost
+const BASE = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+const API_URL = BASE.endsWith('/') ? `${BASE}api` : `${BASE}/api`;
 
 const api = axios.create({
     baseURL: API_URL,
