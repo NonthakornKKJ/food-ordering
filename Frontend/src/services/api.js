@@ -1,15 +1,17 @@
 import axios from 'axios';
 
 // Use Vite env var in production; fallback to localhost
-const BASE = 'https://food-ordering-production-c358.up.railway.app';
-const API_URL = BASE.endsWith('/') ? `${BASE}api` : `${BASE}/api`;
+const BASE = import.meta.env.VITE_API_URL;
+const API_URL = BASE.endsWith("/") ? `${BASE}api` : `${BASE}/api`;
 
 const api = axios.create({
     baseURL: API_URL,
     headers: {
         'Content-Type': 'application/json',
     },
+    withCredentials: true,
 });
+
 
 // Request interceptor - add token to requests
 api.interceptors.request.use(
