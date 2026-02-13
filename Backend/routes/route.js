@@ -58,7 +58,7 @@ router.get('/api/health', (req, res) => {
     res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
-app.get("/api/debug-users", async (req, res) => {
+router.get("/api/debug-users", async (req, res) => {
     const users = await User.find();
     res.json(users);
 });
