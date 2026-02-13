@@ -158,7 +158,7 @@ const MenusPage = () => {
                                     <div className="flex gap-2">
                                         <button
                                             onClick={() => handleOpenModal(menu)}
-                                            className="px-3 py-2 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition text-sm"
+                                            className="px-3 py-2 bg-orange-100 text-orange-600 rounded-lg hover:bg-orange-200 transition text-sm"
                                         >
                                             แก้ไข
                                         </button>
@@ -219,7 +219,7 @@ const MenusPage = () => {
                                                 <div className="flex gap-2">
                                                     <button
                                                         onClick={() => handleOpenModal(menu)}
-                                                        className="px-3 py-1.5 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition"
+                                                        className="px-3 py-1.5 bg-orange-100 text-orange-600 rounded-lg hover:bg-orange-200 transition"
                                                     >
                                                         แก้ไข
                                                     </button>

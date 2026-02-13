@@ -80,7 +80,7 @@ const OrderStatusPage = () => {
                         {cookingOrders.length > 0 && (
                             <div>
                                 <h2 className="text-lg font-semibold text-gray-700 mb-3 flex items-center">
-                                    <span className="w-3 h-3 bg-blue-400 rounded-full mr-2 animate-pulse"></span>
+                                    <span className="w-3 h-3 bg-orange-400 rounded-full mr-2 animate-pulse"></span>
                                     กำลังปรุง ({cookingOrders.length})
                                 </h2>
                                 <div className="space-y-4">

@@ -85,7 +85,7 @@ const UsersPage = () => {
 
     const roleLabels = {
         admin: { label: 'Admin', color: 'bg-purple-100 text-purple-600' },
-        kitchen: { label: 'ครัว', color: 'bg-blue-100 text-blue-600' },
+        kitchen: { label: 'ครัว', color: 'bg-orange-100 text-orange-600' },
         customer: { label: 'ลูกค้า', color: 'bg-green-100 text-green-600' }
     };
 
@@ -163,7 +163,7 @@ const UsersPage = () => {
                                             <div className="flex gap-2">
                                                 <button
                                                     onClick={() => handleOpenModal(user)}
-                                                    className="px-3 py-1.5 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition"
+                                                    className="px-3 py-1.5 bg-orange-100 text-orange-600 rounded-lg hover:bg-orange-200 transition"
                                                 >
                                                     แก้ไข
                                                 </button>

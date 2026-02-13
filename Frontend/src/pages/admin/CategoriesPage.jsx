@@ -128,7 +128,7 @@ const CategoriesPage = () => {
                                 <div className="flex gap-2">
                                     <button
                                         onClick={() => handleOpenModal(category)}
-                                        className="flex-1 py-2 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition font-medium"
+                                        className="flex-1 py-2 bg-orange-100 text-orange-600 rounded-lg hover:bg-orange-200 transition font-medium"
                                     >
                                         แก้ไข
                                     </button>

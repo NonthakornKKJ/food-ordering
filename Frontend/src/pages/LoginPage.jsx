@@ -58,7 +58,7 @@ const LoginPage = () => {
 
     return (
         <div className="flex h-screen items-center justify-center p-10">
-            <div className="w-full max-w-4xl rounded-2xl border border-blue-800 md:shadow-xl bg-white">
+            <div className="w-full max-w-4xl rounded-2xl border border-orange-800 md:shadow-xl bg-white">
                 <div className="grid md:grid-cols-2 p-5">
                     <div className="hidden md:flex items-center justify-center">
                         <img
@@ -69,7 +69,7 @@ const LoginPage = () => {
                     </div>
                     <div className="flex flex-col items-center justify-center p-5">
                         <form onSubmit={handleSubmit} className="w-full max-w-sm">
-                            <h1 className="text-center font-extrabold uppercase text-rose-500 text-3xl mb-8">User Login</h1>
+                            <h1 className="text-center font-extrabold uppercase text-orange-500 text-3xl mb-8">User Login</h1>
 
                             {error && (
                                 <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-2xl mb-4 text-center">
@@ -97,7 +97,7 @@ const LoginPage = () => {
                             <button
                                 type="submit"
                                 disabled={loading}
-                                className="w-full rounded-2xl bg-rose-500 px-5 py-3 font-semibold text-white hover:bg-rose-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="w-full rounded-2xl bg-orange-500 px-5 py-3 font-semibold text-white hover:bg-rose-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                                 {loading ? 'Logging in...' : 'Login'}
                             </button>

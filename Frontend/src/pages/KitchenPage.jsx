@@ -72,7 +72,7 @@ const KitchenPage = () => {
                             <div className="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-xl">
                                 ⏳ รอ: <span className="font-bold">{pendingCount}</span>
                             </div>
-                            <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-xl">
+                                <div className="bg-orange-100 text-orange-800 px-4 py-2 rounded-xl">
                                 👨‍🍳 กำลังปรุง: <span className="font-bold">{cookingCount}</span>
                             </div>
                         </div>

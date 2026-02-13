@@ -7,7 +7,7 @@ const OrderCard = ({ order, onUpdateStatus, showActions = true }) => {
         },
         cooking: {
             label: 'กำลังปรุง',
-            color: 'bg-blue-100 text-blue-800 border-blue-300',
+            color: 'bg-orange-100 text-orange-800 border-orange-300',
             icon: '👨‍🍳'
         },
         completed: {
@@ -76,7 +76,7 @@ const OrderCard = ({ order, onUpdateStatus, showActions = true }) => {
                         {order.status === 'pending' && (
                             <button
                                 onClick={() => onUpdateStatus(order._id, 'cooking')}
-                                className="flex-1 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-xl font-medium transition"
+                                className="flex-1 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-medium transition"
                             >
                                 👨‍🍳 เริ่มปรุง
                             </button>

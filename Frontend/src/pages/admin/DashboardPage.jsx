@@ -61,7 +61,7 @@ const DashboardPage = () => {
                         <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-2xl p-6 shadow-lg">
                             <div className="text-4xl mb-2">🍽️</div>
                             <div className="text-3xl font-bold">{stats?.menus?.total || 0}</div>
-                            <div className="text-blue-100">เมนูทั้งหมด</div>
+                            <div className="text-orange-100">เมนูทั้งหมด</div>
                         </div>
 
                         <div className="bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-2xl p-6 shadow-lg">
@@ -85,10 +85,10 @@ const DashboardPage = () => {
                                 </div>
                                 <div className="flex items-center justify-between">
                                     <span className="flex items-center">
-                                        <span className="w-3 h-3 bg-blue-400 rounded-full mr-2"></span>
+                                        <span className="w-3 h-3 bg-orange-400 rounded-full mr-2"></span>
                                         กำลังปรุง
                                     </span>
-                                    <span className="font-bold text-blue-600">{stats?.orders?.cooking || 0}</span>
+                                    <span className="font-bold text-orange-600">{stats?.orders?.cooking || 0}</span>
                                 </div>
                                 <div className="flex items-center justify-between">
                                     <span className="flex items-center">
@@ -151,7 +151,7 @@ const DashboardPage = () => {
                                                 <td className="py-3 px-4 font-medium">฿{order.totalPrice}</td>
                                                 <td className="py-3 px-4">
                                                     <span className={`px-2 py-1 rounded-full text-sm ${order.status === 'pending' ? 'bg-yellow-100 text-yellow-600' :
-                                                        order.status === 'cooking' ? 'bg-blue-100 text-blue-600' :
+                                                        order.status === 'cooking' ? 'bg-orange-100 text-orange-600' :
                                                             'bg-green-100 text-green-600'
                                                         }`}>
                                                         {order.status === 'pending' ? 'รอ' :
