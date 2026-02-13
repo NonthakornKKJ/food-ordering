@@ -13,52 +13,54 @@ import { getAllTables } from '../controllers/tableController.js';
 const router = express.Router();
 
 // ==================== AUTH ROUTES ====================
-router.post('/api/auth/login', login);
-router.post('/api/auth/qr-login', loginWithQR);
-router.post('/api/auth/register', verifyToken, isAdmin, register);
-router.get('/api/auth/me', verifyToken, getMe);
+// ==================== AUTH ROUTES ====================
+router.post('/auth/login', login);
+router.post('/auth/qr-login', loginWithQR);
+router.post('/auth/register', verifyToken, isAdmin, register);
+router.get('/auth/me', verifyToken, getMe);
 
 // ==================== MENU ROUTES ====================
-router.get('/api/menus', verifyToken, getAllMenus);
-router.get('/api/menus/:id', verifyToken, getMenuById);
-router.post('/api/menus', verifyToken, isAdmin, createMenu);
-router.put('/api/menus/:id', verifyToken, isAdmin, updateMenu);
-router.delete('/api/menus/:id', verifyToken, isAdmin, deleteMenu);
+router.get('/menus', verifyToken, getAllMenus);
+router.get('/menus/:id', verifyToken, getMenuById);
+router.post('/menus', verifyToken, isAdmin, createMenu);
+router.put('/menus/:id', verifyToken, isAdmin, updateMenu);
+router.delete('/menus/:id', verifyToken, isAdmin, deleteMenu);
 
 // ==================== CATEGORY ROUTES ====================
-router.get('/api/categories', verifyToken, getAllCategories);
-router.get('/api/categories/:id', verifyToken, getCategoryById);
-router.post('/api/categories', verifyToken, isAdmin, createCategory);
-router.put('/api/categories/:id', verifyToken, isAdmin, updateCategory);
-router.delete('/api/categories/:id', verifyToken, isAdmin, deleteCategory);
+router.get('/categories', verifyToken, getAllCategories);
+router.get('/categories/:id', verifyToken, getCategoryById);
+router.post('/categories', verifyToken, isAdmin, createCategory);
+router.put('/categories/:id', verifyToken, isAdmin, updateCategory);
+router.delete('/categories/:id', verifyToken, isAdmin, deleteCategory);
 
 // ==================== ORDER ROUTES ====================
-router.post('/api/orders', verifyToken, createOrder);
-router.get('/api/orders', verifyToken, isKitchen, getAllOrders);
-router.get('/api/orders/table/:tableNumber', verifyToken, getOrdersByTable);
-router.get('/api/orders/:id', verifyToken, getOrderById);
-router.patch('/api/orders/:id/status', verifyToken, isKitchen, updateOrderStatus);
-router.delete('/api/orders/:id', verifyToken, isAdmin, deleteOrder);
+router.post('/orders', verifyToken, createOrder);
+router.get('/orders', verifyToken, isKitchen, getAllOrders);
+router.get('/orders/table/:tableNumber', verifyToken, getOrdersByTable);
+router.get('/orders/:id', verifyToken, getOrderById);
+router.patch('/orders/:id/status', verifyToken, isKitchen, updateOrderStatus);
+router.delete('/orders/:id', verifyToken, isAdmin, deleteOrder);
 
-// ==================== USER ROUTES (Admin only) ====================
-router.get('/api/users', verifyToken, isAdmin, getAllUsers);
-router.get('/api/users/:id', verifyToken, isAdmin, getUserById);
-router.post('/api/users', verifyToken, isAdmin, createUser);
-router.put('/api/users/:id', verifyToken, isAdmin, updateUser);
-router.delete('/api/users/:id', verifyToken, isAdmin, deleteUser);
+// ==================== USER ROUTES ====================
+router.get('/users', verifyToken, isAdmin, getAllUsers);
+router.get('/users/:id', verifyToken, isAdmin, getUserById);
+router.post('/users', verifyToken, isAdmin, createUser);
+router.put('/users/:id', verifyToken, isAdmin, updateUser);
+router.delete('/users/:id', verifyToken, isAdmin, deleteUser);
 
-// ==================== DASHBOARD ROUTES (Admin only) ====================
-router.get('/api/dashboard', verifyToken, isAdmin, getDashboardStats);
+// ==================== DASHBOARD ====================
+router.get('/dashboard', verifyToken, isAdmin, getDashboardStats);
 
-// ==================== TABLE ROUTES (Admin only) ====================
-router.get('/api/tables', verifyToken, isAdmin, getAllTables);
+// ==================== TABLE ====================
+router.get('/tables', verifyToken, isAdmin, getAllTables);
 
 // Health check
-router.get('/api/health', (req, res) => {
+router.get('/health', (req, res) => {
     res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
-router.get("/api/debug-users", async (req, res) => {
+// Debug
+router.get('/debug-users', async (req, res) => {
     const users = await User.find();
     res.json(users);
 });

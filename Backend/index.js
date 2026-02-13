@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.use('/', router);
+app.use('/api', router);
 
 // Error handler (must be last)
 app.use(errorHandler);
